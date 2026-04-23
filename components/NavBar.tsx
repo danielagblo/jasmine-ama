@@ -16,9 +16,9 @@ export default function NavBar() {
 
   const navLinks = [
     { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
     { name: "Real Estate", href: "/real-estate" },
-    { name: "Relocation", href: "/relocation" },
+    { name: "Donate", href: "/donate" },
+    { name: "Consultation", href: "/consultation" },
   ];
 
   return (
@@ -29,10 +29,10 @@ export default function NavBar() {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link href="/" className="group flex items-center gap-4">
-          <div className="w-12 h-12 border border-brand-accent/20 flex items-center justify-center rotate-45 group-hover:rotate-0 transition-luxury group-hover:border-brand-accent">
-            <span className="text-xl font-serif -rotate-45 group-hover:rotate-0 transition-luxury text-brand-obsidian">J</span>
+          <div className="w-12 h-12 border border-brand-accent/30 flex items-center justify-center rotate-45 group-hover:rotate-0 transition-luxury group-hover:border-brand-accent">
+            <span className="text-xl font-serif -rotate-45 group-hover:rotate-0 transition-luxury text-foreground">J</span>
           </div>
-          <h1 className="text-xl font-serif tracking-[0.2em] uppercase transition-luxury group-hover:text-brand-accent">
+          <h1 className="text-xl font-serif tracking-[0.2em] uppercase transition-luxury group-hover:text-brand-accent text-foreground">
             Jasmine Ama
           </h1>
         </Link>
@@ -43,17 +43,12 @@ export default function NavBar() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-[10px] uppercase tracking-[0.4em] font-bold hover:text-brand-accent transition-luxury text-brand-obsidian"
+              className="text-[10px] uppercase tracking-[0.4em] font-bold hover:text-brand-accent transition-luxury text-foreground"
             >
               {link.name}
             </Link>
           ))}
-          <Link
-            href="/contact"
-            className="px-10 py-3 bg-brand-obsidian text-white text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-brand-accent transition-luxury rounded-none"
-          >
-            Connect
-          </Link>
+
         </div>
         
         {/* Mobile menu toggle would go here - simplified for now */}

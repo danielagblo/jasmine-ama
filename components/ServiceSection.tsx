@@ -25,7 +25,7 @@ const services = [
 
 export default function ServiceSection() {
   return (
-    <section id="services" className="py-40 bg-brand-slate relative overflow-hidden">
+    <section id="services" className="py-40 bg-background relative overflow-hidden border-b border-foreground/10">
       <div className="absolute top-0 left-0 w-full h-full bg-pattern opacity-[0.03] pointer-events-none"></div>
       
       <div className="container mx-auto px-6 relative z-10">
@@ -47,9 +47,8 @@ export default function ServiceSection() {
                 <img 
                   src={service.image} 
                   alt={service.title} 
-                  className="w-full h-full object-cover transition-luxury group-hover:scale-105 grayscale hover:grayscale-0"
+                  className="w-full h-full object-cover transition-luxury group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-brand-obsidian/20 group-hover:bg-transparent transition-luxury"></div>
               </div>
 
               {/* Text Content */}
@@ -58,15 +57,15 @@ export default function ServiceSection() {
                 <Link href={`/${service.id}`}>
                   <h4 className="text-4xl md:text-5xl font-serif group-hover:text-brand-accent transition-luxury cursor-pointer">{service.title}</h4>
                 </Link>
-                <p className="text-lg text-brand-obsidian/70 max-w-md font-light leading-relaxed">
+                <p className="text-lg text-foreground/80 max-w-md font-light leading-relaxed">
                   {service.description}
                 </p>
                 <div className="pt-8">
                   <Link 
                     href={`/${service.id}`}
-                    className="inline-flex items-center gap-4 text-xs uppercase tracking-[0.4em] font-bold group-hover:gap-6 transition-luxury"
+                    className="inline-flex items-center gap-4 text-xs uppercase tracking-[0.4em] font-bold group-hover:gap-6 transition-luxury text-foreground"
                   >
-                    View Details <span className="h-px w-10 bg-brand-obsidian group-hover:w-20 transition-luxury"></span>
+                    View Details <span className="h-px w-10 bg-brand-accent group-hover:w-20 transition-luxury"></span>
                   </Link>
                 </div>
               </div>

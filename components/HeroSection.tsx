@@ -21,14 +21,14 @@ export default function HeroSection() {
             <div className="flex flex-col items-center gap-6">
               <a 
                 href="/services" 
-                className="px-12 py-6 bg-brand-obsidian text-white rounded-full text-sm font-bold uppercase tracking-widest hover:bg-brand-accent transition-luxury group"
+                className="px-12 py-6 bg-brand-accent text-white rounded-full text-sm font-bold uppercase tracking-widest hover:bg-brand-gold transition-luxury group"
               >
                 Our Services <span className="inline-block group-hover:translate-x-1 transition-transform ml-2">→</span>
               </a>
             </div>
             
             <div className="max-w-lg text-left">
-              <p className="text-sm text-brand-obsidian/60 leading-relaxed font-light">
+              <p className="text-sm text-foreground/80 leading-relaxed font-light">
                 Jasmine Ama creates compelling stories about Africa to give a voice to local people, 
                 especially in Ghana, and those who have moved from the diaspora to help them tell their powerful stories.
               </p>
@@ -38,7 +38,7 @@ export default function HeroSection() {
       </div>
 
       {/* Hero Image Accents - Using her real photos */}
-      <div className="absolute -left-20 bottom-10 w-72 h-96 opacity-30 hover:opacity-100 transition-luxury hidden lg:block rotate-[-5deg] shadow-luxury">
+      <div className="absolute -left-20 bottom-10 w-72 h-96 transition-luxury hidden lg:block rotate-[-5deg] shadow-luxury">
         <img 
           src="/jasmine-ama3.jpg" 
           alt="Jasmine Ama" 
@@ -46,7 +46,7 @@ export default function HeroSection() {
         />
       </div>
       
-      <div className="absolute -right-20 top-20 w-80 h-96 opacity-30 hover:opacity-100 transition-luxury hidden lg:block rotate-[5deg] shadow-luxury">
+      <div className="absolute -right-20 top-20 w-80 h-96 transition-luxury hidden lg:block rotate-[5deg] shadow-luxury">
         <img 
           src="/jasmine_ama.jpg" 
           alt="Jasmine Ama" 

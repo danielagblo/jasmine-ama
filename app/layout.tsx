@@ -18,6 +18,8 @@ export const metadata: Metadata = {
   keywords: ["Jasmine Ama", "Ghana", "Storyteller", "Real Estate Ghana", "Relocation Ghana", "African Entrepreneur"],
 };
 
+import FloatingContact from "@/components/FloatingContact";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,7 +30,10 @@ export default function RootLayout({
       lang="en"
       className={`${playfair.variable} ${outfit.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col font-sans">
+        {children}
+        <FloatingContact />
+      </body>
     </html>
   );
 }
