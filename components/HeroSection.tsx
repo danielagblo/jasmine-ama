@@ -2,7 +2,7 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-20 overflow-hidden">
       {/* Decorative Brand Text Background */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15vw] font-serif opacity-[0.03] select-none pointer-events-none whitespace-nowrap uppercase tracking-tighter">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15vw] font-serif opacity-[0.06] select-none pointer-events-none whitespace-nowrap uppercase tracking-tighter">
         Storyteller • Explorer • Entrepreneur
       </div>
       
