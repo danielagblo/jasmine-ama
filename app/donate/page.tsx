@@ -1,7 +1,23 @@
+"use client";
+
+import { useState } from "react";
+import dynamic from "next/dynamic";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
+// Dynamically import DonationForm with SSR disabled to avoid 'window is not defined' error
+const DonationForm = dynamic(() => import("@/components/DonationForm"), {
+  ssr: false,
+  loading: () => <div className="py-20 text-center opacity-40 uppercase tracking-widest text-[10px]">Loading Secure Form...</div>
+});
+
 export default function DonatePage() {
+  const [status, setStatus] = useState<"idle" | "success">("idle");
+
+  const handleDonationSuccess = () => {
+    setStatus("success");
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <NavBar />
@@ -55,30 +71,21 @@ export default function DonatePage() {
                </div>
 
                <div className="bg-brand-obsidian p-12 border border-brand-accent/20 shadow-luxury space-y-8">
-                  <h3 className="text-[10px] uppercase tracking-widest font-bold opacity-40">Payment Options</h3>
-                  <div className="space-y-4">
-                     <a 
-                       href="#" 
-                       className="block w-full py-4 bg-brand-accent text-white text-center text-[10px] uppercase tracking-widest font-bold hover:bg-brand-gold transition-luxury"
-                     >
-                       PayPal
-                     </a>
-                     <a 
-                       href="#" 
-                       className="block w-full py-4 border border-brand-accent text-brand-accent text-center text-[10px] uppercase tracking-widest font-bold hover:bg-brand-accent hover:text-white transition-luxury"
-                     >
-                       Stripe / Credit Card
-                     </a>
-                     <a 
-                       href="#" 
-                       className="block w-full py-4 border border-brand-accent text-brand-accent text-center text-[10px] uppercase tracking-widest font-bold hover:bg-brand-accent hover:text-white transition-luxury"
-                     >
-                       Mobile Money (MTN/Airtel)
-                     </a>
-                  </div>
-                  <p className="text-[9px] text-center opacity-30 uppercase tracking-[0.3em]">
-                    SECURE TRANSACTION • WORLDWIDE SUPPORT
-                  </p>
+                  {status === "success" ? (
+                    <div className="text-center py-12 space-y-4">
+                      <h3 className="text-3xl font-serif text-brand-gold italic">Thank You.</h3>
+                      <p className="text-sm opacity-60">Your contribution helps us keep the stories alive.</p>
+                      <button onClick={() => setStatus("idle")} className="text-xs uppercase tracking-widest font-bold border-b border-brand-accent pb-1">Donate Again</button>
+                    </div>
+                  ) : (
+                    <>
+                      <h3 className="text-[10px] uppercase tracking-widest font-bold opacity-40">Make a Donation</h3>
+                      <DonationForm onSuccess={handleDonationSuccess} />
+                      <p className="text-[9px] text-center opacity-30 uppercase tracking-[0.3em]">
+                        SECURE TRANSACTION • SUPPORTS CARDS & MOMO
+                      </p>
+                    </>
+                  )}
                </div>
             </div>
           </div>

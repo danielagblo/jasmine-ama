@@ -1,38 +1,22 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
+// Dynamically import BookingForm with SSR disabled to avoid 'window is not defined' error
+const BookingForm = dynamic(() => import("@/components/BookingForm"), {
+  ssr: false,
+  loading: () => <div className="py-20 text-center opacity-40 uppercase tracking-widest text-[10px]">Loading Secure Form...</div>
+});
+
 export default function ConsultationPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    date: "",
-    topic: "",
-  });
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("loading");
-    
-    try {
-      const response = await fetch("/api/bookings", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setStatus("success");
-        setFormData({ name: "", email: "", date: "", topic: "" });
-      } else {
-        setStatus("error");
-      }
-    } catch (error) {
-      setStatus("error");
-    }
+  const handleBookingSuccess = async (reference: string) => {
+    setStatus("success");
+    // You can also perform additional server-side verification here if needed
   };
 
   return (
@@ -85,58 +69,7 @@ export default function ConsultationPage() {
                     </button>
                  </div>
                ) : (
-                 <form onSubmit={handleSubmit} className="space-y-8">
-                    <div className="space-y-2">
-                       <label className="text-[10px] uppercase tracking-widest font-bold opacity-50">Full Name</label>
-                       <input 
-                         required
-                         type="text" 
-                         value={formData.name}
-                         onChange={(e) => setFormData({...formData, name: e.target.value})}
-                         className="w-full bg-transparent border-b border-foreground/20 py-3 focus:border-brand-accent outline-none transition-luxury"
-                       />
-                    </div>
-                    <div className="space-y-2">
-                       <label className="text-[10px] uppercase tracking-widest font-bold opacity-50">Email Address</label>
-                       <input 
-                         required
-                         type="email" 
-                         value={formData.email}
-                         onChange={(e) => setFormData({...formData, email: e.target.value})}
-                         className="w-full bg-transparent border-b border-foreground/20 py-3 focus:border-brand-accent outline-none transition-luxury"
-                       />
-                    </div>
-                    <div className="space-y-2">
-                       <label className="text-[10px] uppercase tracking-widest font-bold opacity-50">Preferred Date</label>
-                       <input 
-                         required
-                         type="date" 
-                         value={formData.date}
-                         onChange={(e) => setFormData({...formData, date: e.target.value})}
-                         className="w-full bg-transparent border-b border-foreground/20 py-3 focus:border-brand-accent outline-none transition-luxury"
-                       />
-                    </div>
-                    <div className="space-y-2">
-                       <label className="text-[10px] uppercase tracking-widest font-bold opacity-50">Consultation Topic</label>
-                       <textarea 
-                         required
-                         value={formData.topic}
-                         onChange={(e) => setFormData({...formData, topic: e.target.value})}
-                         className="w-full bg-transparent border-b border-foreground/20 py-3 focus:border-brand-accent outline-none transition-luxury min-h-[100px]"
-                       />
-                    </div>
-
-                    <button 
-                      disabled={status === "loading"}
-                      className="w-full py-6 bg-brand-accent text-white text-xs uppercase tracking-[0.4em] font-bold hover:bg-brand-gold transition-luxury disabled:opacity-50"
-                    >
-                      {status === "loading" ? "Processing..." : "Confirm Booking — $180"}
-                    </button>
-                    
-                    <p className="text-[10px] text-center opacity-40 uppercase tracking-widest">
-                      Secure checkout via Stripe follows.
-                    </p>
-                 </form>
+                 <BookingForm onSuccess={handleBookingSuccess} />
                )}
             </div>
           </div>
