@@ -50,25 +50,25 @@ export default function DonationForm({ onSuccess }: DonationFormProps) {
   return (
     <form onSubmit={handleDonate} className="space-y-6">
       <div className="space-y-2">
-        <label className="text-[9px] uppercase tracking-widest opacity-50">Amount (USD)</label>
+        <label className="text-[11px] uppercase tracking-widest opacity-80 font-bold text-brand-gold">Amount (USD)</label>
         <div className="relative">
-          <span className="absolute left-0 top-1/2 -translate-y-1/2 text-brand-gold">$</span>
+          <span className="absolute left-0 top-1/2 -translate-y-1/2 text-brand-gold font-bold text-xl">$</span>
           <input
             type="number"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            className="w-full bg-transparent border-b border-foreground/20 py-3 pl-5 focus:border-brand-accent outline-none transition-luxury text-2xl font-serif"
+            className="w-full bg-transparent border-b border-foreground/30 py-3 pl-8 focus:border-brand-accent outline-none transition-luxury text-3xl font-serif text-white"
           />
         </div>
       </div>
       <div className="space-y-2">
-        <label className="text-[9px] uppercase tracking-widest opacity-50">Email Address (Optional)</label>
+        <label className="text-[11px] uppercase tracking-widest opacity-80 font-bold text-brand-gold">Email Address (Optional)</label>
         <input
           type="email"
           placeholder="your@email.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full bg-transparent border-b border-foreground/20 py-3 focus:border-brand-accent outline-none transition-luxury text-sm"
+          className="w-full bg-transparent border-b border-foreground/30 py-3 focus:border-brand-accent outline-none transition-luxury text-base text-white placeholder:text-white/20"
         />
       </div>
       <button

@@ -16,6 +16,12 @@ export default function BookingForm({ onSuccess }: BookingFormProps) {
   });
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
 
+  const minDate = (() => {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    return tomorrow.toISOString().split("T")[0];
+  })();
+
   const publicKey = process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY || "";
 
   const config = {
@@ -54,42 +60,43 @@ export default function BookingForm({ onSuccess }: BookingFormProps) {
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
       <div className="space-y-2">
-        <label className="text-[10px] uppercase tracking-widest font-bold opacity-50">Full Name</label>
+        <label className="text-[11px] uppercase tracking-[0.3em] font-bold text-brand-gold opacity-90">Full Name</label>
         <input 
           required
           type="text" 
           value={formData.name}
           onChange={(e) => setFormData({...formData, name: e.target.value})}
-          className="w-full bg-transparent border-b border-foreground/20 py-3 focus:border-brand-accent outline-none transition-luxury"
+          className="w-full bg-transparent border-b border-foreground/30 py-3 focus:border-brand-accent outline-none transition-luxury text-white text-base"
         />
       </div>
       <div className="space-y-2">
-        <label className="text-[10px] uppercase tracking-widest font-bold opacity-50">Email Address</label>
+        <label className="text-[11px] uppercase tracking-[0.3em] font-bold text-brand-gold opacity-90">Email Address</label>
         <input 
           required
           type="email" 
           value={formData.email}
           onChange={(e) => setFormData({...formData, email: e.target.value})}
-          className="w-full bg-transparent border-b border-foreground/20 py-3 focus:border-brand-accent outline-none transition-luxury"
+          className="w-full bg-transparent border-b border-foreground/30 py-3 focus:border-brand-accent outline-none transition-luxury text-white text-base"
         />
       </div>
       <div className="space-y-2">
-        <label className="text-[10px] uppercase tracking-widest font-bold opacity-50">Preferred Date</label>
+        <label className="text-[11px] uppercase tracking-[0.3em] font-bold text-brand-gold opacity-90">Preferred Date</label>
         <input 
           required
           type="date" 
+          min={minDate}
           value={formData.date}
           onChange={(e) => setFormData({...formData, date: e.target.value})}
-          className="w-full bg-transparent border-b border-foreground/20 py-3 focus:border-brand-accent outline-none transition-luxury"
+          className="w-full bg-transparent border-b border-foreground/30 py-3 focus:border-brand-accent outline-none transition-luxury text-white text-base [color-scheme:dark]"
         />
       </div>
       <div className="space-y-2">
-        <label className="text-[10px] uppercase tracking-widest font-bold opacity-50">Consultation Topic</label>
+        <label className="text-[11px] uppercase tracking-[0.3em] font-bold text-brand-gold opacity-90">Consultation Topic</label>
         <textarea 
           required
           value={formData.topic}
           onChange={(e) => setFormData({...formData, topic: e.target.value})}
-          className="w-full bg-transparent border-b border-foreground/20 py-3 focus:border-brand-accent outline-none transition-luxury min-h-[100px]"
+          className="w-full bg-transparent border-b border-foreground/30 py-3 focus:border-brand-accent outline-none transition-luxury min-h-[100px] text-white text-base"
         />
       </div>
 
@@ -100,7 +107,7 @@ export default function BookingForm({ onSuccess }: BookingFormProps) {
         {status === "loading" ? "Processing..." : "Confirm Booking — $180"}
       </button>
       
-      <p className="text-[10px] text-center opacity-40 uppercase tracking-widest">
+      <p className="text-[11px] text-center opacity-70 uppercase tracking-[0.3em] text-white">
         Secure checkout via Paystack follows.
       </p>
     </form>

@@ -79,9 +79,9 @@ export default function DonatePage() {
                     </div>
                   ) : (
                     <>
-                      <h3 className="text-[10px] uppercase tracking-widest font-bold opacity-40">Make a Donation</h3>
+                      <h3 className="text-xs uppercase tracking-[0.3em] font-bold text-brand-gold">Make a Donation</h3>
                       <DonationForm onSuccess={handleDonationSuccess} />
-                      <p className="text-[9px] text-center opacity-30 uppercase tracking-[0.3em]">
+                      <p className="text-[10px] text-center opacity-60 uppercase tracking-[0.3em] text-white">
                         SECURE TRANSACTION • SUPPORTS CARDS & MOMO
                       </p>
                     </>
