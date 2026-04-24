@@ -10,6 +10,13 @@
   
   --font-serif: var(--font-playfair);
   --font-sans: var(--font-outfit);
+
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-33.33%); }
+  }
 }
 
 /* Dark Chocolate Luxury Theme */

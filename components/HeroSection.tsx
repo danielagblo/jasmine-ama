@@ -14,7 +14,7 @@ export default function HeroSection() {
           
           <h2 className="text-5xl md:text-8xl lg:text-[110px] font-serif mb-8 md:mb-12 leading-[1] md:leading-[0.9] text-balance animate-fade-in opacity-0" style={{ animationDelay: '0.4s' }}>
             Elevate the <br />
-            <span className="italic text-brand-accent">African Narrative.</span>
+            <span className="italic text-brand-accent">Ghanaian Journey.</span>
           </h2>
 
           {/* Featured Image for Mobile/Tablet */}
@@ -38,8 +38,8 @@ export default function HeroSection() {
             
             <div className="max-w-lg text-center md:text-left">
               <p className="text-sm text-foreground/80 leading-relaxed font-light">
-                Jasmine Ama creates compelling stories about Africa to give a voice to local people, 
-                especially in Ghana, and those who have moved from the diaspora to help them tell their powerful stories.
+                Jasmine Ama is a premier storyteller and entrepreneur based in Accra. 
+                She bridges the gap between the diaspora and the continent, providing authentic local expertise for those looking to invest, move, or discover the heart of Ghana.
               </p>
             </div>
           </div>

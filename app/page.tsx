@@ -1,6 +1,6 @@
 import NavBar from "@/components/NavBar";
 import HeroSection from "@/components/HeroSection";
-
+import Partners from "@/components/Partners";
 import ContentSection from "@/components/ContentSection";
 import Footer from "@/components/Footer";
 
@@ -10,6 +10,7 @@ export default function Home() {
       <NavBar />
       <main className="flex-1 overflow-x-hidden">
         <HeroSection />
+        <Partners />
         
         {/* Refined Mission Section - Cocoa Background */}
         <section className="py-24 bg-brand-slate text-foreground relative overflow-hidden border-y border-foreground/5">
