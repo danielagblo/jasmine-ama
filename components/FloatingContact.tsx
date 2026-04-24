@@ -1,10 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Mail, MessageCircle, X } from "lucide-react";
 
 export default function FloatingContact() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Hide on secure portal
+  if (pathname === "/secure-portal") return null;
 
   return (
     <div className="fixed bottom-8 right-8 z-[100]">
