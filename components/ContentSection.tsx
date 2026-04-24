@@ -1,27 +1,39 @@
 const videos = [
   {
     id: "RkPBep4-jgg",
-    title: "The Reality of Ghana",
+    title: "What $2 Can Get You in a Ghana Market",
     thumbnail: "https://img.youtube.com/vi/RkPBep4-jgg/maxresdefault.jpg",
     url: "https://www.youtube.com/watch?v=RkPBep4-jgg"
   },
   {
     id: "ZkJaqlQ70Zg",
-    title: "Moving to Accra",
+    title: "Building a Beautiful Home in Ghana from America",
     thumbnail: "https://img.youtube.com/vi/ZkJaqlQ70Zg/maxresdefault.jpg",
     url: "https://www.youtube.com/watch?v=ZkJaqlQ70Zg"
   },
   {
     id: "UhjzQRXyrbk",
-    title: "Ghanaian Heritage",
+    title: "Building My Home in Ghana and Growing My Own Food",
     thumbnail: "https://img.youtube.com/vi/UhjzQRXyrbk/maxresdefault.jpg",
     url: "https://www.youtube.com/watch?v=UhjzQRXyrbk"
   },
   {
     id: "4BWKnA-to40",
-    title: "Digital Nomad Life",
+    title: "Starting a Lucrative and Unusual Ghana Business",
     thumbnail: "https://img.youtube.com/vi/4BWKnA-to40/maxresdefault.jpg",
     url: "https://www.youtube.com/watch?v=4BWKnA-to40"
+  },
+  {
+    id: "Rv4hdLqv1Ns",
+    title: "Are These Neighbourhoods Better Than Accra?",
+    thumbnail: "https://img.youtube.com/vi/Rv4hdLqv1Ns/maxresdefault.jpg",
+    url: "https://www.youtube.com/watch?v=Rv4hdLqv1Ns"
+  },
+  {
+    id: "lrqyb9zo8ME",
+    title: "The Traditions of a Beautiful Ghanaian Wedding",
+    thumbnail: "https://img.youtube.com/vi/lrqyb9zo8ME/maxresdefault.jpg",
+    url: "https://www.youtube.com/watch?v=lrqyb9zo8ME"
   }
 ];
 
