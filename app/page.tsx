@@ -11,8 +11,8 @@ export default function Home() {
       <main className="flex-1 overflow-x-hidden">
         <HeroSection />
         
-        {/* Refined Mission Section */}
-        <section className="py-24 bg-brand-rose/5 text-foreground relative overflow-hidden border-y border-foreground/5">
+        {/* Refined Mission Section - Cocoa Background */}
+        <section className="py-24 bg-brand-slate text-foreground relative overflow-hidden border-y border-foreground/5">
           <div className="container mx-auto px-6 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
               <div className="lg:col-span-4">
@@ -21,7 +21,7 @@ export default function Home() {
               </div>
               
               <div className="lg:col-span-8 space-y-8">
-                <p className="text-2xl md:text-3xl font-serif leading-relaxed text-foreground/90">
+                <p className="text-2xl md:text-3xl font-serif leading-relaxed text-foreground/90 text-glow">
                   Jasmine Ama creates compelling stories about Africa through video to give a voice to local people, 
                   especially in Ghana, and help them tell their powerful stories of daily living, culture, and business.
                 </p>
@@ -36,19 +36,17 @@ export default function Home() {
           </div>
         </section>
 
-
-        
         <ContentSection />
         
-        {/* Consultation CTA Section - Visual & Compact */}
-        <section className="py-24 bg-brand-rose/5 relative overflow-hidden border-t border-foreground/5">
+        {/* Consultation CTA Section - Milk Chocolate Background */}
+        <section className="py-24 bg-brand-rose relative overflow-hidden border-t border-foreground/5">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
               {/* Image Side */}
               <div className="relative aspect-[4/3] overflow-hidden shadow-luxury border border-foreground/5">
                 <img 
-                  src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" 
-                  alt="Professional Consultation" 
+                  src="/ghanaian_consultation_meeting_1776978947412.png" 
+                  alt="Ghanaian Professional Consultation" 
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-brand-obsidian/20"></div>

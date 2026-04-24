@@ -7,27 +7,36 @@ export default function HeroSection() {
       </div>
       
       <div className="container mx-auto px-6 relative z-10 text-center">
-        <div className="max-w-5xl mx-auto">
-          <p className="text-[12px] uppercase tracking-[0.5em] text-brand-accent mb-10 font-bold animate-fade-in opacity-0" style={{ animationDelay: '0.2s' }}>
+        <div className="max-w-5xl mx-auto flex flex-col items-center">
+          <p className="text-[12px] uppercase tracking-[0.5em] text-brand-accent mb-6 font-bold animate-fade-in opacity-0" style={{ animationDelay: '0.2s' }}>
             Accra, Ghana
           </p>
           
-          <h2 className="text-6xl md:text-8xl lg:text-[110px] font-serif mb-12 leading-[0.9] text-balance animate-fade-in opacity-0" style={{ animationDelay: '0.4s' }}>
+          <h2 className="text-5xl md:text-8xl lg:text-[110px] font-serif mb-8 md:mb-12 leading-[1] md:leading-[0.9] text-balance animate-fade-in opacity-0" style={{ animationDelay: '0.4s' }}>
             Elevate the <br />
             <span className="italic text-brand-accent">African Narrative.</span>
           </h2>
+
+          {/* Featured Image for Mobile/Tablet */}
+          <div className="lg:hidden w-full max-w-sm aspect-[4/5] mb-12 animate-fade-in opacity-0 shadow-luxury overflow-hidden border border-foreground/5" style={{ animationDelay: '0.5s' }}>
+            <img 
+              src="/jasmine_ama.jpg" 
+              alt="Jasmine Ama" 
+              className="w-full h-full object-cover"
+            />
+          </div>
           
-          <div className="flex flex-col md:flex-row items-center justify-center gap-12 mt-20 animate-fade-in opacity-0" style={{ animationDelay: '0.6s' }}>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-12 animate-fade-in opacity-0" style={{ animationDelay: '0.6s' }}>
             <div className="flex flex-col items-center gap-6">
               <a 
-                href="/services" 
-                className="px-12 py-6 bg-brand-accent text-white rounded-full text-sm font-bold uppercase tracking-widest hover:bg-brand-gold transition-luxury group"
+                href="/consultation" 
+                className="px-12 py-6 bg-brand-accent text-white rounded-full text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-brand-gold transition-luxury group"
               >
-                Our Services <span className="inline-block group-hover:translate-x-1 transition-transform ml-2">→</span>
+                Book Advisory <span className="inline-block group-hover:translate-x-1 transition-transform ml-2">→</span>
               </a>
             </div>
             
-            <div className="max-w-lg text-left">
+            <div className="max-w-lg text-center md:text-left">
               <p className="text-sm text-foreground/80 leading-relaxed font-light">
                 Jasmine Ama creates compelling stories about Africa to give a voice to local people, 
                 especially in Ghana, and those who have moved from the diaspora to help them tell their powerful stories.
@@ -37,8 +46,8 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Hero Image Accents - Using her real photos */}
-      <div className="absolute -left-20 bottom-10 w-72 h-96 transition-luxury hidden lg:block rotate-[-5deg] shadow-luxury">
+      {/* Hero Image Accents - Desktop Only Floating Look */}
+      <div className="absolute -left-20 bottom-10 w-72 h-96 transition-luxury hidden lg:block rotate-[-5deg] shadow-luxury border border-foreground/5">
         <img 
           src="/jasmine-ama3.jpg" 
           alt="Jasmine Ama" 
@@ -46,7 +55,7 @@ export default function HeroSection() {
         />
       </div>
       
-      <div className="absolute -right-20 top-20 w-80 h-96 transition-luxury hidden lg:block rotate-[5deg] shadow-luxury">
+      <div className="absolute -right-20 top-20 w-80 h-96 transition-luxury hidden lg:block rotate-[5deg] shadow-luxury border border-foreground/5">
         <img 
           src="/jasmine_ama.jpg" 
           alt="Jasmine Ama" 
